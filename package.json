@@ -1,0 +1,38 @@
+{
+  "name": "event-registration-qr-checkin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Event Registration & QR Check-in Web App — Next.js + Tailwind + Firebase Firestore",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "firebase": "^10.12.5",
+    "html5-qrcode": "^2.3.8",
+    "lucide-react": "^0.438.0",
+    "next": "^14.2.7",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.1",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.7",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

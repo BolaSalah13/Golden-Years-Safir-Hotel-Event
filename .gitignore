@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+.next/
+out/
+
+# Env (never commit real keys)
+.env*.local
+.env.local
+
+# Vercel
+.vercel/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.log

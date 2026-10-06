@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+/* QR scanner video should fill its container nicely */
+#qr-reader video {
+  border-radius: 0.75rem;
+  width: 100% !important;
+}
+#qr-reader__scan_region {
+  background: transparent;
+}
+#qr-reader__dashboard {
+  padding: 0 !important;
+}
+#qr-reader__dashboard button {
+  @apply rounded-lg bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-700;
+}
+#qr-reader__dashboard select {
+  @apply rounded-lg border border-slate-300 px-2 py-1.5 text-sm;
+}
+
+/* Print: only the ticket card */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-ticket,
+  #printable-ticket * {
+    visibility: visible;
+  }
+  #printable-ticket {
+    position: absolute;
+    inset: 0;
+    margin: 0 auto;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
