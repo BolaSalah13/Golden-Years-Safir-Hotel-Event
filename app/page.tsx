@@ -28,7 +28,7 @@ import { cn } from "@/lib/utils";
 const EVENT_NAME =
   process.env.NEXT_PUBLIC_EVENT_NAME ?? "Golden Years Safir Hotel Event";
 const EVENT_DATE =
-  process.env.NEXT_PUBLIC_EVENT_DATE ?? "Tuesday, October 13";
+  process.env.NEXT_PUBLIC_EVENT_DATE ?? "Tuesday, October 13 • 11:00 AM";
 const EVENT_VENUE =
   process.env.NEXT_PUBLIC_EVENT_VENUE ?? "Safir Hotel";
 
@@ -47,6 +47,9 @@ const BRANCHES = [
   "فيصل و الهرم",
   "الاسكندرية",
   "المنصورة",
+  "الجروب الثقافي",
+  "جروب الهوايات",
+  "ضيف",
 ];
 
 interface FormState {
@@ -346,7 +349,7 @@ export default function RegistrationPage() {
                 value={form.organization}
                 onChange={(e) => set("organization", e.target.value)}
                 className={cn(
-                  "mt-1 w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none transition focus:ring-2",
+                  "mt-1 w-full rounded-xl border bg-white px-3 py-2.5 text-sm text-black outline-none transition focus:ring-2 [&>option]:text-black",
                   errors.organization
                     ? "border-red-400 focus:ring-red-100"
                     : "border-slate-300 focus:border-slate-900 focus:ring-slate-200",

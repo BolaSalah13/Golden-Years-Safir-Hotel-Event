@@ -22,7 +22,7 @@ import { formatTimestamp } from "@/lib/utils";
 const EVENT_NAME =
   process.env.NEXT_PUBLIC_EVENT_NAME ?? "Golden Years Safir Hotel Event";
 const EVENT_DATE =
-  process.env.NEXT_PUBLIC_EVENT_DATE ?? "Tuesday, October 13";
+  process.env.NEXT_PUBLIC_EVENT_DATE ?? "Tuesday, October 13 • 11:00 AM";
 const EVENT_VENUE =
   process.env.NEXT_PUBLIC_EVENT_VENUE ?? "Safir Hotel";
 
