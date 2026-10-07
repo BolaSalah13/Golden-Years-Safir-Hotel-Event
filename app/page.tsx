@@ -47,7 +47,6 @@ const BRANCHES = [
   "فيصل و الهرم",
   "الاسكندرية",
   "المنصورة",
-  "ضيف",
 ];
 
 interface FormState {
