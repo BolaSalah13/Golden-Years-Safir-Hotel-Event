@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import {
   collection,
   doc,
@@ -26,7 +25,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { db } from "@/lib/firebase";
-import AdminGate from "@/components/AdminGate";
+import AdminGate, { scannerCode } from "@/components/AdminGate";
 import { ATTENDEES_COLLECTION, type Attendee } from "@/lib/types";
 import { extractAttendeeId, formatTimestamp } from "@/lib/utils";
 import { cn } from "@/lib/utils";
@@ -332,9 +331,15 @@ export default function ScanPage() {
   }
 
   return (
-    <AdminGate>
+    <AdminGate
+      code={scannerCode()}
+      storageKey="event-scanner-auth"
+      title="Scanner access"
+      description="Enter the scanner passcode to start checking in attendees."
+      unlockLabel="Unlock scanner"
+    >
       <div className="mx-auto max-w-3xl">
-        <div className="flex items-center justify-between">
+        <div>
           <div>
             <h1 className="flex items-center gap-2 text-2xl font-bold">
               <ScanLine className="h-6 w-6" /> Check-in scanner
@@ -343,12 +348,6 @@ export default function ScanPage() {
               Point the camera at an attendee QR. Each QR holds the attendee ID.
             </p>
           </div>
-          <Link
-            href="/admin/dashboard"
-            className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-100"
-          >
-            Dashboard
-          </Link>
         </div>
 
         {/* Scanner card */}

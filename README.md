@@ -56,9 +56,12 @@ Collection `attendees`, document ID = `attendeeId`:
 > `email` is kept as `""` for backward compatibility with older records.
 > `phone` is stored normalized (digits only, `01xxxxxxxxx`) and is unique.
 
-## Optional: admin passcode
+## Optional: admin passcodes (separate roles)
 
-Set `NEXT_PUBLIC_ADMIN_CODE=1234` in `.env.local` / Vercel to gate `/admin/*` behind a simple passcode (stored in `localStorage`). Leave empty to disable. For hard security, add Firebase Auth and tighten `firestore.rules`.
+- `NEXT_PUBLIC_SCANNER_CODE` — give to the door team; unlocks `/scan` and `/admin/scan` only.
+- `NEXT_PUBLIC_DASHBOARD_CODE` — managers only; unlocks `/admin/dashboard`. Scanner staff are blocked even via direct URL.
+- Legacy `NEXT_PUBLIC_ADMIN_CODE` still works as a fallback for both if set.
+- Leave all empty to disable the gates. For hard security, add Firebase Auth and tighten `firestore.rules`.
 
 ## Edge cases handled
 

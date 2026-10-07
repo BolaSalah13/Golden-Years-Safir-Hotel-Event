@@ -25,7 +25,7 @@ import {
   Users,
 } from "lucide-react";
 import { db } from "@/lib/firebase";
-import AdminGate from "@/components/AdminGate";
+import AdminGate, { dashboardCode } from "@/components/AdminGate";
 import { ATTENDEES_COLLECTION, type Attendee } from "@/lib/types";
 import { csvEscape, formatTimestamp } from "@/lib/utils";
 import { cn } from "@/lib/utils";
@@ -164,7 +164,13 @@ export default function DashboardPage() {
   }
 
   return (
-    <AdminGate>
+    <AdminGate
+      code={dashboardCode()}
+      storageKey="event-dashboard-auth"
+      title="Dashboard access"
+      description="Enter the manager passcode to view attendance data. Scanner staff cannot open this page."
+      unlockLabel="Unlock dashboard"
+    >
       <div className="mx-auto max-w-5xl">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
