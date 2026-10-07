@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   Download,
   Loader2,
-  Printer,
   QrCode,
 } from "lucide-react";
 import { db } from "@/lib/firebase";
@@ -75,14 +74,6 @@ export default function TicketPage() {
     load();
   }, [load]);
 
-  function downloadQrPng() {
-    if (!qrRef.current || !attendee) return;
-    const a = document.createElement("a");
-    a.href = qrRef.current;
-    a.download = `ticket-${attendee.id}-qr.png`;
-    a.click();
-  }
-
   /** Compose a full ticket PNG on canvas (no extra dependency). */
   async function downloadFullTicketPng() {
     if (!qrRef.current || !attendee) return;
@@ -121,7 +112,7 @@ export default function TicketPage() {
     ctx.font = "24px system-ui, sans-serif";
     ctx.fillStyle = "#475569";
     ctx.fillText(attendee.organization.slice(0, 44), 90, 240);
-    ctx.fillText(`${attendee.email}  •  ${attendee.phone}`.slice(0, 60), 90, 278);
+    ctx.fillText(attendee.phone.slice(0, 60), 90, 278);
     ctx.font = "22px system-ui, sans-serif";
     ctx.fillStyle = "#334155";
     ctx.fillText(`${EVENT_DATE}`, 90, 330);
@@ -298,24 +289,12 @@ export default function TicketPage() {
         </div>
       </div>
 
-      <div className="no-print mt-4 grid gap-2 sm:grid-cols-3">
-        <button
-          onClick={downloadQrPng}
-          className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-700"
-        >
-          <Download className="h-4 w-4" /> QR PNG
-        </button>
+      <div className="no-print mt-4">
         <button
           onClick={downloadFullTicketPng}
-          className="flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-100"
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white hover:bg-slate-700"
         >
-          <Download className="h-4 w-4" /> Full ticket PNG
-        </button>
-        <button
-          onClick={() => window.print()}
-          className="flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-100"
-        >
-          <Printer className="h-4 w-4" /> Print
+          <Download className="h-4 w-4" /> Download Ticket
         </button>
       </div>
       <p className="no-print mt-3 text-center text-xs text-slate-400">
