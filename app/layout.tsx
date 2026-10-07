@@ -50,8 +50,11 @@ export default function RootLayout({
         </main>
         <footer className="no-print border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-5xl px-4 py-4 text-center text-xs text-slate-500">
-            Free-tier stack: Next.js on Vercel + Firebase Firestore. QR tickets
-            contain only the attendee ID.
+            <p>Free-tier stack: Next.js on Vercel + Firebase Firestore. QR tickets
+            contain only the attendee ID.</p>
+            <p className="mt-1 font-medium text-slate-600" dir="auto">
+              Developed by Bola Salah | تم التطوير بواسطة بولا صلاح
+            </p>
           </div>
         </footer>
         </div>

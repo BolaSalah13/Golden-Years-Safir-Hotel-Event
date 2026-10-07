@@ -249,10 +249,6 @@ export default function TicketPage() {
             <p className="text-sm text-slate-500">{attendee.organization}</p>
             <dl className="mt-4 space-y-1.5 text-sm">
               <div className="flex gap-2">
-                <dt className="w-14 shrink-0 text-slate-400">Email</dt>
-                <dd className="break-all">{attendee.email || "—"}</dd>
-              </div>
-              <div className="flex gap-2">
                 <dt className="w-14 shrink-0 text-slate-400">Phone</dt>
                 <dd>{attendee.phone}</dd>
               </div>
