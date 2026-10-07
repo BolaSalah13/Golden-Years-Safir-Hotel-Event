@@ -50,13 +50,19 @@ export default function RootLayout({
         </main>
         <footer className="no-print border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-5xl px-4 py-4 text-center text-xs text-slate-500">
-            <p>Free-tier stack: Next.js on Vercel + Firebase Firestore. QR tickets
-            contain only the attendee ID.</p>
-            <p className="mt-1 font-medium text-slate-600" dir="auto">
-              Developed by Bola Salah | تم التطوير بواسطة بولا صلاح
-            </p>
+            Free-tier stack: Next.js on Vercel + Firebase Firestore. QR tickets
+            contain only the attendee ID.
           </div>
         </footer>
+        {/* Fixed credit badge — always visible on every page, even while scrolling */}
+        <div className="no-print pointer-events-none fixed bottom-3 left-1/2 z-50 -translate-x-1/2">
+          <p
+            dir="auto"
+            className="whitespace-nowrap rounded-full bg-slate-900/85 px-4 py-1.5 text-[11px] font-medium text-white shadow-lg backdrop-blur"
+          >
+            Developed by Bola Salah | تم التطوير بواسطة بولا صلاح
+          </p>
+        </div>
         </div>
       </body>
     </html>

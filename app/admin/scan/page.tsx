@@ -488,7 +488,7 @@ export default function ScanPage() {
             <input
               value={manual}
               onChange={(e) => setManual(e.target.value)}
-              placeholder="e.g. BolaSalah@gmail.com, بولا صلاح فتحي, or 01*********"
+              placeholder="e.g. بولا صلاح فتحي or 01*********"
               inputMode="search"
               className="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-200"
             />
