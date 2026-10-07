@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { LayoutDashboard, ScanLine } from "lucide-react";
 import { LogoMark, PageBackground } from "@/components/Logo";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const eventName =
-  process.env.NEXT_PUBLIC_EVENT_NAME ?? "Golden Years Choir Concert";
+  process.env.NEXT_PUBLIC_EVENT_NAME ?? "Golden Years Safir Hotel Event";
 
 export const metadata: Metadata = {
   title: {
@@ -30,22 +29,6 @@ function Navbar() {
           <LogoMark />
           <span className="text-sm sm:text-base">{eventName}</span>
         </Link>
-        <nav className="flex items-center gap-1 text-sm">
-          <Link
-            href="/admin/scan"
-            className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-          >
-            <ScanLine className="h-4 w-4" />
-            <span className="hidden sm:inline">Scan</span>
-          </Link>
-          <Link
-            href="/admin/dashboard"
-            className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-          >
-            <LayoutDashboard className="h-4 w-4" />
-            <span className="hidden sm:inline">Dashboard</span>
-          </Link>
-        </nav>
       </div>
     </header>
   );

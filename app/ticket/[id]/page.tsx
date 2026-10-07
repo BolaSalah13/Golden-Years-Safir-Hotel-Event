@@ -20,11 +20,11 @@ import { LogoMark } from "@/components/Logo";
 import { formatTimestamp } from "@/lib/utils";
 
 const EVENT_NAME =
-  process.env.NEXT_PUBLIC_EVENT_NAME ?? "Golden Years Choir Concert";
+  process.env.NEXT_PUBLIC_EVENT_NAME ?? "Golden Years Safir Hotel Event";
 const EVENT_DATE =
-  process.env.NEXT_PUBLIC_EVENT_DATE ?? "Monday, October 12 • 11:00 AM";
+  process.env.NEXT_PUBLIC_EVENT_DATE ?? "Tuesday, October 13";
 const EVENT_VENUE =
-  process.env.NEXT_PUBLIC_EVENT_VENUE ?? "Heliopolis Library Theater";
+  process.env.NEXT_PUBLIC_EVENT_VENUE ?? "Safir Hotel";
 
 export default function TicketPage() {
   const params = useParams<{ id: string }>();
