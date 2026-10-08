@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: `%s | ${eventName}`,
   },
   description:
-    "Register for the event, get a QR ticket, and check in in seconds. Built with Next.js + Firebase.",
+    "Register for the event, get a QR Code, and check in in seconds. Built with Next.js + Firebase.",
   icons: {
     icon: "/logo-circular.png",
   },
@@ -50,7 +50,7 @@ export default function RootLayout({
         </main>
         <footer className="no-print border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-5xl px-4 py-4 text-center text-xs text-slate-500">
-            Free-tier stack: Next.js on Vercel + Firebase Firestore. QR tickets
+            Free-tier stack: Next.js on Vercel + Firebase Firestore. QR Codes
             contain only the attendee ID.
           </div>
         </footer>

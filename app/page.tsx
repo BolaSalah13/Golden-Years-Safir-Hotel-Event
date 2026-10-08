@@ -156,7 +156,7 @@ export default function RegistrationPage() {
         setStatus({
           kind: "error",
           message:
-            "This phone number is already registered. You can open the existing ticket below.",
+            "This phone number is already registered. You can open the existing QR Code below.",
           existingId,
         });
         return;
@@ -220,7 +220,7 @@ export default function RegistrationPage() {
           <div className="space-y-3 p-6 text-sm leading-relaxed text-slate-300">
             <p className="flex gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-              Register in seconds — your QR ticket is generated instantly.
+              Register in seconds — your QR Code is generated instantly.
             </p>
             <p className="flex gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
@@ -243,7 +243,7 @@ export default function RegistrationPage() {
         >
           <h2 className="text-xl font-semibold">Register your spot</h2>
           <p className="mt-1 text-sm text-slate-500">
-            Fields marked * are required. Your ticket QR is issued immediately
+            Fields marked * are required. Your QR Code is issued immediately
             after registration.
           </p>
 
@@ -383,7 +383,7 @@ export default function RegistrationPage() {
                     }
                     className="mt-2 rounded-lg bg-red-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-500"
                   >
-                    Open my existing ticket
+                    Open my existing QR Code
                   </button>
                 )}
               </div>

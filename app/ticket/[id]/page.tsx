@@ -64,7 +64,7 @@ export default function TicketPage() {
     } catch (e) {
       console.error(e);
       setErrorMsg(
-        e instanceof Error ? e.message : "Could not load ticket."
+        e instanceof Error ? e.message : "Could not load QR Code."
       );
       setState("error");
     }
@@ -151,7 +151,7 @@ export default function TicketPage() {
     return (
       <div className="mx-auto flex max-w-md flex-col items-center gap-3 py-20 text-center">
         <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
-        <p className="text-sm text-slate-500">Loading your ticket…</p>
+        <p className="text-sm text-slate-500">Loading your QR Code…</p>
       </div>
     );
   }
@@ -160,7 +160,7 @@ export default function TicketPage() {
     return (
       <div className="mx-auto max-w-md rounded-2xl border border-amber-200 bg-amber-50 p-6 text-center">
         <AlertTriangle className="mx-auto h-8 w-8 text-amber-500" />
-        <h1 className="mt-3 text-lg font-semibold">Ticket not found</h1>
+        <h1 className="mt-3 text-lg font-semibold">QR Code not found</h1>
         <p className="mt-1 text-sm text-slate-600">
           No attendee exists with ID <code className="font-mono">{id}</code>.
           The link may be incomplete.
@@ -179,7 +179,7 @@ export default function TicketPage() {
     return (
       <div className="mx-auto max-w-md rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
         <AlertTriangle className="mx-auto h-8 w-8 text-red-500" />
-        <h1 className="mt-3 text-lg font-semibold">Couldn&apos;t load ticket</h1>
+        <h1 className="mt-3 text-lg font-semibold">Couldn&apos;t load QR Code</h1>
         <p className="mt-1 break-words text-sm text-slate-600">{errorMsg}</p>
         <div className="mt-4 flex justify-center gap-2">
           <button
@@ -210,7 +210,7 @@ export default function TicketPage() {
 
       <div className="mb-4 flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
         <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-        You&apos;re registered! Screenshot this page or download your ticket
+        You&apos;re registered! Screenshot this page or download your QR Code
         below.
       </div>
 

@@ -140,7 +140,7 @@ export default function ScanPage() {
       const ref = doc(db, ATTENDEES_COLLECTION, id);
       const snap = await getDoc(ref);
       if (!snap.exists()) {
-        setResult({ kind: "error", message: `Invalid ticket — no attendee found for ID “${id}”.` });
+        setResult({ kind: "error", message: `Invalid QR Code — no attendee found for ID “${id}”.` });
         setRecent((r) => [{ at: new Date(), attendee: null, rawId: id, outcome: "invalid" } as RecentEntry, ...r].slice(0, 8));
         playChime(false);
         try { navigator.vibrate?.(100); } catch {}
@@ -232,7 +232,7 @@ export default function ScanPage() {
     setManualMsg("");
     setManualHits([]);
     if (!q) {
-      setManualMsg("Type a name, email, phone number, or ticket ID.");
+      setManualMsg("Type a name, email, phone number, or QR Code ID.");
       return;
     }
     setManualBusy(true);
@@ -467,7 +467,7 @@ export default function ScanPage() {
                 <XCircle className="mt-0.5 h-6 w-6 shrink-0 text-red-600" />
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-red-600">
-                    Invalid ticket
+                    Invalid QR Code
                   </p>
                   <p className="mt-1 text-sm font-medium">{result.message}</p>
                 </div>
@@ -482,7 +482,7 @@ export default function ScanPage() {
             <Search className="h-4 w-4" /> Manual search fallback
           </h2>
           <p className="mt-1 text-sm text-slate-500">
-            Camera failing? Search by name, email, phone number, or paste the ticket ID.
+            Camera failing? Search by name, email, phone number, or paste the QR Code ID.
           </p>
           <form onSubmit={manualSearch} className="mt-3 flex gap-2">
             <input
@@ -552,7 +552,7 @@ export default function ScanPage() {
                 >
                   <span className="min-w-0">
                     <span className="font-semibold">
-                      {r.attendee ? r.attendee.name : "Unknown ticket"}
+                      {r.attendee ? r.attendee.name : "Unknown QR Code"}
                     </span>{" "}
                     <span className="font-mono text-xs opacity-60">{r.rawId}</span>
                   </span>
