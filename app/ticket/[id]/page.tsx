@@ -294,7 +294,7 @@ export default function TicketPage() {
           onClick={downloadFullTicketPng}
           className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white hover:bg-slate-700"
         >
-          <Download className="h-4 w-4" /> Download Ticket
+          <Download className="h-4 w-4" /> QR Code
         </button>
       </div>
       <p className="no-print mt-3 text-center text-xs text-slate-400">
