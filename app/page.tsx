@@ -396,7 +396,7 @@ export default function RegistrationPage() {
             className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
-            {submitting ? "Registering…" : "Get my QR ticket"}
+            {submitting ? "Registering…" : "Get My QR Code"}
           </button>
           <p className="mt-3 text-center text-xs text-slate-400">
             By registering you agree to be checked in via QR at the venue.
