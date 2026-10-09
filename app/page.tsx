@@ -156,7 +156,7 @@ export default function RegistrationPage() {
         setStatus({
           kind: "error",
           message:
-            "This phone number is already registered. You can open the existing QR Code below.",
+            "هذا الرقم مسجل بالفعل، لا يمكنك التسجيل أكثر من مرة بنفس الرقم.",
           existingId,
         });
         return;
@@ -246,6 +246,29 @@ export default function RegistrationPage() {
             Fields marked * are required. Your QR Code is issued immediately
             after registration.
           </p>
+
+          {status.kind === "error" && (
+            <div
+              role="alert"
+              className="mt-5 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800"
+            >
+              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+              <div>
+                <p dir="auto">{status.message}</p>
+                {status.existingId && (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      router.push(`/ticket/${status.existingId}`)
+                    }
+                    className="mt-2 rounded-lg bg-red-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-500"
+                  >
+                    عرض الـ QR Code المسجل
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
@@ -369,26 +392,6 @@ export default function RegistrationPage() {
               )}
             </div>
           </div>
-
-          {status.kind === "error" && (
-            <div className="mt-5 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800">
-              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-              <div>
-                <p>{status.message}</p>
-                {status.existingId && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      router.push(`/ticket/${status.existingId}`)
-                    }
-                    className="mt-2 rounded-lg bg-red-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-500"
-                  >
-                    Open my existing QR Code
-                  </button>
-                )}
-              </div>
-            </div>
-          )}
 
           <button
             type="submit"
